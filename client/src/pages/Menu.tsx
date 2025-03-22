@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 import { Category, MenuItem } from "@/lib/types";
 
 const Menu = () => {
-  const [activeCategory, setActiveCategory] = useState("all");
+  const [activeCategory, setActiveCategory] = useState<string | number>("all");
   const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -35,9 +35,9 @@ const Menu = () => {
     setIsModalOpen(false);
   };
 
-  const getItemsByCategory = (categoryId: string) => {
+  const getItemsByCategory = (categoryId: number | string) => {
     if (categoryId === "all") return menuItems;
-    return menuItems.filter(item => item.categoryId.toString() === categoryId);
+    return menuItems.filter(item => item.categoryId === Number(categoryId));
   };
 
   return (
@@ -47,7 +47,7 @@ const Menu = () => {
       <main className="max-w-7xl mx-auto px-4 py-8">
         <MenuNavigation 
           categories={categories} 
-          activeCategory={activeCategory} 
+          activeCategory={activeCategory.toString()} 
           setActiveCategory={setActiveCategory} 
         />
 
@@ -69,7 +69,7 @@ const Menu = () => {
             title={category.name}
             items={getItemsByCategory(category.id)}
             onItemClick={openItemModal}
-            isVisible={category.id === activeCategory}
+            isVisible={Number(category.id) === Number(activeCategory)}
           />
         ))}
 

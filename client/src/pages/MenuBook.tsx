@@ -28,14 +28,27 @@ export default function MenuBook() {
 
   // Fetch menu items
   const { data: menuItems = [] } = useQuery<MenuItem[]>({
-    queryKey: ["/api/menu/items"],
+    queryKey: ["/api/menu"],
   });
 
+  // Enable debugging in dev
+  useEffect(() => {
+    console.log("Categories loaded:", categories.length);
+    console.log("Menu items loaded:", menuItems.length);
+  }, [categories, menuItems]);
+
   // Group menu items by category
-  const menuItemsByCategory = categories.reduce<Record<string, MenuItem[]>>((acc, category) => {
-    acc[category.id] = menuItems.filter(item => item.categoryId === category.id);
-    return acc;
-  }, {});
+  const menuItemsByCategory: Record<number, MenuItem[]> = {};
+  categories.forEach(category => {
+    menuItemsByCategory[category.id] = menuItems.filter(item => item.categoryId === category.id);
+  });
+
+  // Log output for debugging
+  useEffect(() => {
+    Object.keys(menuItemsByCategory).forEach(catId => {
+      console.log(`Category ${catId} has ${menuItemsByCategory[Number(catId)]?.length || 0} items`);
+    });
+  }, [menuItemsByCategory]);
 
   // Maximum number of pages (intro + categories)
   const maxPages = 1 + categories.length;
@@ -77,6 +90,79 @@ export default function MenuBook() {
 
   const toggleLanguage = () => {
     setLanguage(prev => prev === "english" ? "nepali" : "english");
+  };
+
+  // Render menu items for the current category
+  const renderMenuItems = (categoryId: number) => {
+    const items = menuItemsByCategory[categoryId] || [];
+    
+    if (items.length === 0) {
+      return (
+        <div className="text-center p-8">
+          <p className={`text-lg ${isDarkMode ? 'text-amber-200' : 'text-amber-700'}`}>
+            {language === "english" 
+              ? "No items available in this category at the moment." 
+              : "यस वर्गमा हाल कुनै आइटम उपलब्ध छैन।"}
+          </p>
+        </div>
+      );
+    }
+    
+    return (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+        {items.map((item) => (
+          <motion.div
+            key={item.id}
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
+          >
+            <Card className={`overflow-hidden h-full ${isDarkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-amber-200'}`}>
+              <div className="flex flex-col md:flex-row h-full">
+                <div className="w-full md:w-1/3 h-48 md:h-auto relative">
+                  <img 
+                    src={item.image} 
+                    alt={item.name} 
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      // Fallback for missing images
+                      (e.target as HTMLImageElement).src = '/assets/default-food.png';
+                    }}
+                  />
+                </div>
+                <div className="p-4 w-full md:w-2/3 flex flex-col">
+                  <div className="flex justify-between items-start mb-2">
+                    <h3 className={`text-xl font-medium ${isDarkMode ? 'text-amber-300' : 'text-amber-800'}`}>
+                      {item.name}
+                    </h3>
+                    <Badge className={isDarkMode ? 'bg-amber-700 text-amber-100' : 'bg-amber-100 text-amber-800'}>
+                      Rs. {item.price}
+                    </Badge>
+                  </div>
+                  
+                  <p className={`text-sm mb-2 ${isDarkMode ? 'text-gray-300' : 'text-amber-700'}`}>
+                    {item.shortDescription}
+                  </p>
+                  
+                  <div className="mt-auto flex flex-wrap gap-2">
+                    {item.spiceLevel && (
+                      <Badge variant="outline" className={isDarkMode ? 'text-amber-400 border-amber-700' : 'text-amber-700 border-amber-200'}>
+                        {item.spiceLevel}
+                      </Badge>
+                    )}
+                    {item.prepTime && (
+                      <Badge variant="outline" className={isDarkMode ? 'text-amber-400 border-amber-700' : 'text-amber-700 border-amber-200'}>
+                        {item.prepTime}
+                      </Badge>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </motion.div>
+        ))}
+      </div>
+    );
   };
 
   return (
@@ -202,55 +288,7 @@ export default function MenuBook() {
                             {categories[currentPage - 1].name}
                           </h2>
                           
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-                            {menuItemsByCategory[categories[currentPage - 1].id]?.map((item) => (
-                              <motion.div
-                                key={item.id}
-                                initial={{ y: 20, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ duration: 0.3, delay: 0.1 }}
-                              >
-                                <Card className={`overflow-hidden h-full ${isDarkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-amber-200'}`}>
-                                  <div className="flex flex-col md:flex-row h-full">
-                                    <div className="w-full md:w-1/3 h-48 md:h-auto relative">
-                                      <img 
-                                        src={item.image} 
-                                        alt={item.name} 
-                                        className="w-full h-full object-cover"
-                                      />
-                                    </div>
-                                    <div className="p-4 w-full md:w-2/3 flex flex-col">
-                                      <div className="flex justify-between items-start mb-2">
-                                        <h3 className={`text-xl font-medium ${isDarkMode ? 'text-amber-300' : 'text-amber-800'}`}>
-                                          {item.name}
-                                        </h3>
-                                        <Badge className={isDarkMode ? 'bg-amber-700 text-amber-100' : 'bg-amber-100 text-amber-800'}>
-                                          Rs. {item.price}
-                                        </Badge>
-                                      </div>
-                                      
-                                      <p className={`text-sm mb-2 ${isDarkMode ? 'text-gray-300' : 'text-amber-700'}`}>
-                                        {item.shortDescription}
-                                      </p>
-                                      
-                                      <div className="mt-auto flex flex-wrap gap-2">
-                                        {item.spiceLevel && (
-                                          <Badge variant="outline" className={isDarkMode ? 'text-amber-400 border-amber-700' : 'text-amber-700 border-amber-200'}>
-                                            {item.spiceLevel}
-                                          </Badge>
-                                        )}
-                                        {item.prepTime && (
-                                          <Badge variant="outline" className={isDarkMode ? 'text-amber-400 border-amber-700' : 'text-amber-700 border-amber-200'}>
-                                            {item.prepTime}
-                                          </Badge>
-                                        )}
-                                      </div>
-                                    </div>
-                                  </div>
-                                </Card>
-                              </motion.div>
-                            ))}
-                          </div>
+                          {renderMenuItems(categories[currentPage - 1].id)}
                         </>
                       )}
                     </motion.div>

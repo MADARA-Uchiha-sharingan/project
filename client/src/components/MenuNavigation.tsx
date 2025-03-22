@@ -5,7 +5,7 @@ import { Category } from "@/lib/types";
 interface MenuNavigationProps {
   categories: Category[];
   activeCategory: string;
-  setActiveCategory: (category: string) => void;
+  setActiveCategory: (category: string | number) => void;
 }
 
 const MenuNavigation = ({ categories, activeCategory, setActiveCategory }: MenuNavigationProps) => {
@@ -28,7 +28,7 @@ const MenuNavigation = ({ categories, activeCategory, setActiveCategory }: MenuN
               key={category.id}
               className={cn(
                 "menu-tab font-playfair text-lg px-1 py-2 focus:outline-none transition",
-                activeCategory === category.id && "active text-gold border-b-2 border-gold"
+                activeCategory === category.id.toString() && "active text-gold border-b-2 border-gold"
               )}
               onClick={() => setActiveCategory(category.id)}
             >

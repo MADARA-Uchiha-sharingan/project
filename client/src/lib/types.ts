@@ -1,17 +1,17 @@
 export interface Category {
-  id: string;
+  id: number;
   name: string;
   description?: string;
 }
 
 export interface MenuItem {
-  id: string;
+  id: number;
   name: string;
   price: number;
   shortDescription: string;
   description: string;
   image: string;
-  categoryId: string;
+  categoryId: number;
   isFeatured?: boolean;
   spiceLevel?: string;
   prepTime?: string;
