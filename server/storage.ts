@@ -141,6 +141,18 @@ export class MemStorage implements IStorage {
     });
 
     await this.createMenuItem({
+      name: "Hot Lemon Water",
+      price: 50,
+      shortDescription: "Warm and refreshing drink with lemon, great for digestion",
+      description: "A simple yet invigorating hot drink made with fresh lemon juice, warm water, and a touch of honey, perfect for soothing the throat and aiding digestion.",
+      image: "/attached_assets/Lemon Tea.png", // Using lemon tea image as placeholder
+      categoryId: teaBeverages.id,
+      isFeatured: false,
+      spiceLevel: "None",
+      prepTime: "3 mins"
+    });
+
+    await this.createMenuItem({
       name: "Banana Lassi",
       price: 150,
       shortDescription: "A creamy yogurt-based drink blended with fresh bananas",
@@ -162,6 +174,30 @@ export class MemStorage implements IStorage {
       isFeatured: false,
       spiceLevel: "None",
       prepTime: "5 mins"
+    });
+
+    await this.createMenuItem({
+      name: "Milk",
+      price: 50,
+      shortDescription: "Fresh and nutritious warm or cold milk",
+      description: "Pure, fresh milk served according to your preference - hot, cold, or at room temperature. A simple and nutritious beverage.",
+      image: "/attached_assets/Plain lassi.png", // Using plain lassi image as placeholder
+      categoryId: teaBeverages.id,
+      isFeatured: false,
+      spiceLevel: "None",
+      prepTime: "2 mins"
+    });
+
+    await this.createMenuItem({
+      name: "Curd",
+      price: 70,
+      shortDescription: "Thick and creamy natural yogurt, perfect for digestion",
+      description: "Freshly made yogurt with a smooth and creamy texture, served chilled. Rich in probiotics and perfect for digestive health.",
+      image: "/attached_assets/Plain lassi.png", // Using plain lassi image as placeholder
+      categoryId: teaBeverages.id,
+      isFeatured: false,
+      spiceLevel: "None",
+      prepTime: "2 mins"
     });
 
     // Hard Drinks
@@ -371,9 +407,58 @@ export class MemStorage implements IStorage {
       prepTime: "15 mins"
     });
 
+    await this.createMenuItem({
+      name: "Chicken Fried Noodles",
+      price: 200,
+      shortDescription: "Flavorful stir-fried noodles with chicken",
+      description: "A delicious combination of stir-fried noodles with tender pieces of chicken and fresh vegetables, seasoned with our special sauce blend.",
+      image: "/attached_assets/Egg Fried Noodles.png", // Using egg noodles image as placeholder
+      categoryId: noodles.id,
+      isFeatured: true,
+      spiceLevel: "Medium",
+      prepTime: "20 mins"
+    });
+
+    // Macaroni
+    await this.createMenuItem({
+      name: "Macaroni with Egg",
+      price: 80,
+      shortDescription: "Soft macaroni mixed with scrambled eggs",
+      description: "Tender macaroni pasta tossed with fluffy scrambled eggs and seasoned with herbs and spices for a simple yet satisfying meal.",
+      image: "/attached_assets/Egg Fried Noodles.png", // Using noodle image as placeholder
+      categoryId: macaroni.id,
+      isFeatured: false,
+      spiceLevel: "Mild",
+      prepTime: "15 mins"
+    });
+
+    await this.createMenuItem({
+      name: "Veg Fried Macaroni",
+      price: 100,
+      shortDescription: "Stir-fried macaroni with vegetables",
+      description: "Macaroni pasta stir-fried with a colorful medley of fresh vegetables and our special house sauce for a flavorful vegetarian option.",
+      image: "/attached_assets/Veg Fried Noodles.png", // Using veg noodles image as placeholder
+      categoryId: macaroni.id,
+      isFeatured: false,
+      spiceLevel: "Medium",
+      prepTime: "18 mins"
+    });
+
+    await this.createMenuItem({
+      name: "Egg Fried Macaroni",
+      price: 150,
+      shortDescription: "Macaroni sautéed with eggs and spices",
+      description: "A hearty dish of macaroni pasta stir-fried with scrambled eggs, vegetables, and a blend of aromatic spices for a satisfying meal.",
+      image: "/attached_assets/Egg Fried Noodles.png", // Using egg noodles image as placeholder
+      categoryId: macaroni.id,
+      isFeatured: true,
+      spiceLevel: "Medium",
+      prepTime: "20 mins"
+    });
+
     // Chowmein
     await this.createMenuItem({
-      name: "Veg Chowmein",
+      name: "Veg Fried Chowmein",
       price: 60,
       shortDescription: "Stir-fried noodles with fresh vegetables",
       description: "A popular street food featuring stir-fried noodles with a colorful mix of crunchy vegetables and our special sauce blend.",
@@ -384,9 +469,33 @@ export class MemStorage implements IStorage {
       prepTime: "15 mins"
     });
 
+    await this.createMenuItem({
+      name: "Egg Fried Chowmein",
+      price: 90,
+      shortDescription: "Classic chowmein with scrambled eggs",
+      description: "Stir-fried chowmein noodles tossed with fluffy scrambled eggs, vegetables, and our house seasoning for a flavorful meal.",
+      image: "/attached_assets/Veg Chowmein.png", // Using veg chowmein image as placeholder
+      categoryId: chowmein.id,
+      isFeatured: false,
+      spiceLevel: "Medium",
+      prepTime: "18 mins"
+    });
+
+    await this.createMenuItem({
+      name: "Chicken Fried Chowmein",
+      price: 120,
+      shortDescription: "Chowmein loaded with tender chicken pieces",
+      description: "A hearty plate of stir-fried chowmein noodles combined with juicy chicken pieces, fresh vegetables, and our signature sauce.",
+      image: "/attached_assets/Veg Chowmein.png", // Using veg chowmein image as placeholder
+      categoryId: chowmein.id,
+      isFeatured: true,
+      spiceLevel: "Medium",
+      prepTime: "20 mins"
+    });
+
     // Thukpa
     await this.createMenuItem({
-      name: "Veg Thukpa",
+      name: "Plain Thukpa",
       price: 120,
       shortDescription: "A Tibetan-style noodle soup with mild spices",
       description: "A hearty Tibetan-style soup with thick noodles, vegetables, and mild spices in a flavorful broth, perfect for cold days.",
@@ -395,6 +504,30 @@ export class MemStorage implements IStorage {
       isFeatured: false,
       spiceLevel: "Medium",
       prepTime: "20 mins"
+    });
+
+    await this.createMenuItem({
+      name: "Chicken Thukpa",
+      price: 200,
+      shortDescription: "Hearty noodle soup with shredded chicken",
+      description: "A warm and filling Tibetan-style soup featuring handmade noodles in a rich broth with tender shredded chicken and vegetables.",
+      image: "/attached_assets/Veg Thuppa.png", // Using veg thukpa image as placeholder
+      categoryId: thukpa.id,
+      isFeatured: true,
+      spiceLevel: "Medium",
+      prepTime: "25 mins"
+    });
+
+    await this.createMenuItem({
+      name: "Egg Thukpa",
+      price: 160,
+      shortDescription: "Traditional thukpa with eggs",
+      description: "A comforting noodle soup combining thick noodles in a flavorful broth with soft-boiled eggs, creating a protein-rich and satisfying meal.",
+      image: "/attached_assets/Veg Thuppa.png", // Using veg thukpa image as placeholder
+      categoryId: thukpa.id,
+      isFeatured: false,
+      spiceLevel: "Medium",
+      prepTime: "22 mins"
     });
 
     // Mo:Mo

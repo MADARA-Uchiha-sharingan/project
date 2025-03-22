@@ -1,0 +1,98 @@
+Tea & Hot Beverages
+1.	Green Tea – Rs.60 | A soothing and refreshing tea packed with antioxidants.
+2.	Milk Tea – Rs.40 | Traditional Nepali tea with milk, sugar, and spices for a rich taste.
+3.	Black Tea – Rs.20 | Strong and aromatic plain tea without milk.
+4.	Lemon Tea – Rs.30 | A citrusy twist to black tea with fresh lemon juice.
+5.	Milk Coffee – Rs.100 | Creamy and smooth coffee with milk and sugar.
+6.	Black Coffee – Rs.50 | Strong and bold coffee without milk.
+7.	Hot Lemon Water – Rs.50 | Warm and refreshing drink with lemon, great for digestion.
+8.	Banana Lassi – Rs.150 | A creamy yogurt-based drink blended with fresh bananas.
+9.	Plain Lassi – Rs.100 | A refreshing, sweet yogurt drink to cool you down.
+10.	Milk – Rs.50 | Fresh and nutritious warm or cold milk.
+11.	Curd – Rs.70 | Thick and creamy natural yogurt, perfect for digestion.
+Soft Drinks
+1.	Coke – Rs.60 | Classic carbonated cola for a refreshing fizz.
+2.	Fanta – Rs.60 | Sweet and citrusy orange-flavored soda.
+3.	Sprite – Rs.60 | Lemon-lime soda with a crisp and tangy taste.
+4.	Mix Fruit Juice – Rs.100 | A blend of fresh seasonal fruits for a nutritious drink.
+5.	Red Bull – Rs.150 | Energy drink to keep you active and refreshed.
+Hard Drinks
+1.	Tuborg – Rs.600 | Smooth and crisp Danish-style lager beer.
+2.	Gorkha – Rs.450 | A locally brewed strong beer with a bold flavor.
+3.	Gorkha Mini – Rs.250 | A smaller version of Gorkha beer for a lighter option.
+4.	Gorkha Rum XXX – Rs.550 | A rich and strong dark rum (quarter glass).
+5.	8848 – Rs.625 | A premium rum with a smooth finish (quarter glass).
+6.	Old Durbar – Rs.750 | High-quality aged whiskey with a smoky aroma (quarter glass).
+Cigarettes
+1.	Bijuli – Rs.10 | Affordable local cigarette (3 pieces).
+2.	Khukuri – Rs.10 | Strong and bold single-stick cigarette.
+3.	Sikhar-Ice (Blue) – Rs.20 | A menthol-infused smooth cigarette.
+Breakfast
+1.	Toasted Bread with Omelet – Rs.200 | Crispy toast served with a fluffy omelet (2 sets).
+2.	Toasted Bread with Jam/Honey – Rs.150 | Toasted bread with sweet jam or honey (2 sets).
+3.	Boiled Egg – Rs.80 | Simple yet nutritious boiled eggs (2 pieces).
+4.	Plain Paratha – Rs.60 | Soft and flaky flatbread, perfect for breakfast.
+5.	Omelet – Rs.30 | Light and fluffy egg omelet.
+6.	Omelet & Paratha – Rs.100 | A combination of omelet and crispy paratha.
+7.	Onion Pakora – Rs.80 | Crunchy deep-fried onion fritters (8 pieces).
+8.	Paneer Pakora – Rs.250 | Crispy deep-fried cottage cheese fritters (8 pieces).
+9.	Mushroom Pakora – Rs.200 | Golden-fried mushrooms with a crispy coating (8 pieces).
+Noodles
+1.	Noodle Soup – Rs.50 | Warm and comforting noodle soup.
+2.	Egg Noodle Soup – Rs.80 | Classic noodle soup with an added egg.
+3.	Veg Fried Noodles – Rs.100 | Stir-fried noodles with fresh vegetables.
+4.	Egg Fried Noodles – Rs.150 | Fried noodles tossed with egg and spices.
+5.	Chicken Fried Noodles – Rs.200 | Flavorful stir-fried noodles with chicken.
+Macaroni
+1.	Macaroni with Egg – Rs.80 | Soft macaroni mixed with scrambled eggs.
+2.	Veg Fried Macaroni – Rs.100 | Stir-fried macaroni with vegetables.
+3.	Egg Fried Macaroni – Rs.150 | Macaroni sautéed with eggs and spices.
+Chowmein
+1.	Veg Fried Chowmein – Rs.60 | Stir-fried noodles with fresh vegetables.
+2.	Egg Fried Chowmein – Rs.90 | Classic chowmein with scrambled eggs.
+3.	Chicken Fried Chowmein – Rs.120 | Chowmein loaded with tender chicken pieces.
+Thukpa
+1.	Plain Thukpa – Rs.120 | A Tibetan-style noodle soup with mild spices.
+2.	Chicken Thukpa – Rs.200 | Hearty noodle soup with shredded chicken.
+3.	Egg Thukpa – Rs.160 | Traditional thukpa with eggs.
+Mo:Mo
+1.	Steamed Chicken Mo:Mo – Rs.130 | Classic dumplings filled with minced chicken.
+2.	Steamed Veg Mo:Mo – Rs.100 | Healthy steamed dumplings with vegetable stuffing.
+3.	Fried Chicken Mo:Mo – Rs.170 | Crispy deep-fried chicken dumplings.
+4.	Mo:Mo Sadeko – Rs.200 | Spicy and tangy marinated Mo:Mo.
+5.	Chili Fried Chicken Mo:Mo – Rs.200 | Spicy stir-fried Mo:Mo with chili sauce.
+6.	Jhol Mo:Mo – Rs.175 | Mo:Mo served in a warm and flavorful soup.
+7.	Combo Mo:Mo Set – Rs.300 | A platter of assorted Mo:Mo varieties.
+Sausage & Tofu
+1.	Chicken Sausage – Rs.400 | Juicy grilled chicken sausages.
+2.	Veg Sausage – Rs.400 | Plant-based sausages with a smoky flavor.
+3.	Veg Tofu – Rs.400 | Soft and protein-rich tofu.
+Fried & Sekuwa Dishes
+1.	Chicken Fry – Rs.250 | Deep-fried crispy chicken pieces.
+2.	Fish Fry – Rs.300 | Golden-fried fresh fish.
+3.	Chicken Sekuwa – Rs.350 | Spicy and smoky grilled chicken.
+Non-Veg Khaja Set
+1.	Fish Khaja Set – Rs.400 | A traditional platter with fried fish and sides.
+2.	Chicken Khaja Set – Rs.350 | A full meal set with chicken and Nepali accompaniments.
+3.	Combo Chicken Khaja Set – Rs.550 | A mix of chicken, sausage, and gravy.
+Veg Khaja Set
+1.	Veg Khaja Set – Rs.200 | A delicious vegetarian snack platter.
+2.	Combo Veg Khaja Set – Rs.450 | A combination of veg dishes with paneer.
+Khana Set
+1.	Veg Khana Set – Rs.250 | A full Nepali vegetarian meal.
+2.	Chicken Khana Set – Rs.400 | Rice with chicken curry and sides.
+3.	Fish Khana Set – Rs.500 | A complete meal with fish and accompaniments.
+4.	Mutton Khana Set – Rs.550 | Hearty meal with tender mutton curry.
+Fried Rice
+1.	Fried Jeera Rice – Rs.100 | Aromatic cumin-flavored rice.
+2.	Veg Fried Rice – Rs.150 | Fried rice loaded with vegetables.
+3.	Egg Fried Rice – Rs.200 | Fried rice mixed with egg.
+4.	Chicken Fried Rice – Rs.250 | Chicken-infused stir-fried rice.
+5.	Mixed Fried Rice – Rs.250 | Fried rice with eggs and chicken.
+Salads & Snacks
+1.	Masala Papad – Rs.50 | Spiced and crunchy papadum.
+2.	Green Salad – Rs.150 | Fresh and healthy mixed greens.
+3.	Fruit Salad – Rs.350 | A colorful mix of fresh fruits.
+Desserts
+1.	Rice Pudding – Rs.250 | Creamy and sweet Nepali-style kheer.
+2.	Ice Cream – Rs.80 | Cool and creamy ice cream.
