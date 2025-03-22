@@ -37,7 +37,7 @@ const Menu = () => {
 
   const getItemsByCategory = (categoryId: string) => {
     if (categoryId === "all") return menuItems;
-    return menuItems.filter(item => item.categoryId === categoryId);
+    return menuItems.filter(item => item.categoryId.toString() === categoryId);
   };
 
   return (

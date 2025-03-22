@@ -40,7 +40,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/menu/category/:categoryId", async (req, res) => {
     try {
       const { categoryId } = req.params;
-      const menuItems = await storage.getMenuItemsByCategory(categoryId);
+      const categoryIdNumber = parseInt(categoryId, 10);
+      const menuItems = await storage.getMenuItemsByCategory(categoryIdNumber);
       res.json(menuItems);
     } catch (error) {
       console.error("Error fetching menu items by category:", error);
