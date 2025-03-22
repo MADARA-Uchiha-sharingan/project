@@ -18,6 +18,7 @@ export type Category = typeof categories.$inferSelect;
 
 // Menu Item Schema
 export const menuItems = pgTable("menu_items", {
+  fallbackIcon: text("fallback_icon"),
   id: serial("id").primaryKey(),
   name: text("name").notNull(),
   price: integer("price").notNull(),

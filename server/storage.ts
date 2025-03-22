@@ -74,6 +74,7 @@ export class MemStorage implements IStorage {
       shortDescription: "A soothing and refreshing tea packed with antioxidants",
       description: "Our green tea is sourced from the finest tea gardens of Nepal, offering a refreshing taste with health benefits of antioxidants.",
       image: "/assets/Green Tea.png",
+      fallbackIcon: "fa-mug-hot",
       categoryId: teaBeverages.id,
       isFeatured: false,
       spiceLevel: "None",
