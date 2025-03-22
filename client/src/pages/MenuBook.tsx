@@ -8,29 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
 import { Category, MenuItem } from "@/lib/types";
 
-// Hook to load and play sound
-const useSound = (url: string) => {
-  const audio = useRef<HTMLAudioElement | null>(null);
-
-  useEffect(() => {
-    audio.current = new Audio(url);
-    return () => {
-      if (audio.current) {
-        audio.current.pause();
-        audio.current = null;
-      }
-    };
-  }, [url]);
-
-  const play = () => {
-    if (audio.current) {
-      audio.current.currentTime = 0;
-      audio.current.play();
-    }
-  };
-
-  return { play };
-};
+import { usePageTurnSound } from "@/lib/usePageTurnSound";
 
 export default function MenuBook() {
   const [, setLocation] = useLocation();
@@ -41,7 +19,7 @@ export default function MenuBook() {
   const [language, setLanguage] = useState<"english" | "nepali">("english");
   
   // Use custom sound hook for page turning
-  const pageTurnSound = useSound("/page-turn.mp3");
+  const pageTurnSound = usePageTurnSound();
 
   // Fetch menu categories
   const { data: categories = [] } = useQuery<Category[]>({
