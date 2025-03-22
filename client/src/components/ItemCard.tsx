@@ -12,7 +12,15 @@ const ItemCard: FC<ItemCardProps> = ({ item, onClick }) => {
   return (
     <Card className="overflow-hidden shadow-lg bg-white transition-transform duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
       <div className="relative h-64 overflow-hidden">
-        <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+        <img 
+          src={item.image} 
+          alt={item.name} 
+          className="w-full h-full object-cover" 
+          onError={(e) => {
+            // Try to access the image directly if the assets path fails
+            (e.target as HTMLImageElement).src = item.image.replace('/assets/', '/');
+          }}
+        />
         <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 transition-opacity duration-300 flex items-center justify-center hover:opacity-100">
           <Button onClick={onClick} variant="outline" className="bg-white text-burgundy hover:bg-white/90">
             View Details

@@ -126,7 +126,7 @@ export default function MenuBook() {
                     className="w-full h-full object-cover"
                     onError={(e) => {
                       // Fallback for missing images
-                      (e.target as HTMLImageElement).src = '/assets/default-food.png';
+                      (e.target as HTMLImageElement).src = item.image.replace('/assets/', '/');
                     }}
                   />
                 </div>
