@@ -21,7 +21,15 @@ const ItemDetailModal: FC<ItemDetailModalProps> = ({ item, isOpen, onClose }) =>
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
       <DialogContent className="bg-white rounded-lg shadow-xl max-w-3xl w-full mx-4 p-0 overflow-hidden">
         <div className="relative">
-          <img src={item.image} alt={item.name} className="w-full h-64 object-cover" />
+          <img 
+            src={item.image} 
+            alt={item.name} 
+            className="w-full h-64 object-cover" 
+            onError={(e) => {
+              // Try to access the image directly if the assets path fails
+              (e.target as HTMLImageElement).src = item.image.replace('/assets/', '/');
+            }}
+          />
           <DialogClose className="absolute top-4 right-4 bg-white text-burgundy rounded-full w-8 h-8 flex items-center justify-center shadow-lg">
             <X className="h-4 w-4" />
           </DialogClose>
