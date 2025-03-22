@@ -38,7 +38,7 @@ export default function MenuBook() {
   }, {});
 
   // Maximum number of pages (intro + categories)
-  const maxPages = 1 + Math.ceil(categories.length / 1);
+  const maxPages = 1 + categories.length;
 
   const handleOpenBook = () => {
     setIsBookOpen(true);

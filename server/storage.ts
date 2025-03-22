@@ -47,10 +47,11 @@ export class MemStorage implements IStorage {
   }
 
   private async initializeData() {
-    // Create categories based on the menu provided
+    // Create categories based on the exact menu provided
     const teaBeverages = await this.createCategory({ name: "Tea & Hot Beverages", description: "Hot drinks including tea, coffee, and lassi" });
     const softDrinks = await this.createCategory({ name: "Soft Drinks", description: "Refreshing non-alcoholic beverages" });
     const hardDrinks = await this.createCategory({ name: "Hard Drinks", description: "Alcoholic beverages including beer, rum, and whiskey" });
+    const cigarettes = await this.createCategory({ name: "Cigarettes", description: "Various cigarette options" });
     const breakfast = await this.createCategory({ name: "Breakfast", description: "Morning favorites to start your day" });
     const noodles = await this.createCategory({ name: "Noodles", description: "Various noodle dishes" });
     const macaroni = await this.createCategory({ name: "Macaroni", description: "Delicious macaroni dishes" });
@@ -58,7 +59,7 @@ export class MemStorage implements IStorage {
     const thukpa = await this.createCategory({ name: "Thukpa", description: "Tibetan-style noodle soups" });
     const momo = await this.createCategory({ name: "Mo:Mo", description: "Traditional Nepali dumplings" });
     const sausageTofu = await this.createCategory({ name: "Sausage & Tofu", description: "Sausage and tofu specialties" });
-    const friedSekuwa = await this.createCategory({ name: "Fried & Sekuwa", description: "Fried meat dishes and grilled delicacies" });
+    const friedSekuwa = await this.createCategory({ name: "Fried & Sekuwa Dishes", description: "Fried meat dishes and grilled delicacies" });
     const nonVegKhaja = await this.createCategory({ name: "Non-Veg Khaja Set", description: "Traditional non-vegetarian Nepali platters" });
     const vegKhaja = await this.createCategory({ name: "Veg Khaja Set", description: "Traditional vegetarian Nepali platters" });
     const khanaSet = await this.createCategory({ name: "Khana Set", description: "Complete Nepali meals" });
@@ -410,6 +411,42 @@ export class MemStorage implements IStorage {
     });
 
     await this.createMenuItem({
+      name: "Steamed Chicken Mo:Mo",
+      price: 130,
+      shortDescription: "Classic dumplings filled with minced chicken",
+      description: "Traditional Nepali dumplings filled with minced chicken, herbs and spices, steamed until tender and served with a spicy tomato sauce.",
+      image: "/attached_assets/Steamed Veg MoMO.png", // Using veg momo image as placeholder
+      categoryId: momo.id,
+      isFeatured: false,
+      spiceLevel: "Medium",
+      prepTime: "25 mins"
+    });
+
+    await this.createMenuItem({
+      name: "Fried Chicken Mo:Mo",
+      price: 170,
+      shortDescription: "Crispy deep-fried chicken dumplings",
+      description: "Our popular chicken momos deep-fried to golden perfection, creating a crispy exterior while maintaining a juicy filling inside.",
+      image: "/attached_assets/spicy fried chilli momo.png", // Using chili momo image as placeholder
+      categoryId: momo.id,
+      isFeatured: false,
+      spiceLevel: "Medium",
+      prepTime: "30 mins"
+    });
+
+    await this.createMenuItem({
+      name: "Mo:Mo Sadeko",
+      price: 200,
+      shortDescription: "Spicy and tangy marinated Mo:Mo",
+      description: "Steamed momos tossed with a tangy mix of spices, chili, garlic, and fresh herbs to create a flavorful and zesty dish.",
+      image: "/attached_assets/spicy fried chilli momo.png", // Using chili momo image as placeholder
+      categoryId: momo.id,
+      isFeatured: false,
+      spiceLevel: "Hot",
+      prepTime: "30 mins"
+    });
+
+    await this.createMenuItem({
       name: "Chili Fried Mo:Mo",
       price: 200,
       shortDescription: "Spicy stir-fried Mo:Mo with chili sauce",
@@ -419,6 +456,436 @@ export class MemStorage implements IStorage {
       isFeatured: true,
       spiceLevel: "Hot",
       prepTime: "30 mins"
+    });
+
+    await this.createMenuItem({
+      name: "Jhol Mo:Mo",
+      price: 175,
+      shortDescription: "Mo:Mo served in a warm and flavorful soup",
+      description: "Steamed momos served in a hot, aromatic broth flavored with spices, herbs, and a touch of garlic and sesame, perfect for cold days.",
+      image: "/attached_assets/Jhol momo.png",
+      categoryId: momo.id,
+      isFeatured: false,
+      spiceLevel: "Medium",
+      prepTime: "25 mins"
+    });
+
+    await this.createMenuItem({
+      name: "Combo Mo:Mo Set",
+      price: 300,
+      shortDescription: "A platter of assorted Mo:Mo varieties",
+      description: "A delightful sampling of different momo varieties including steamed, fried, and jhol momos, perfect for sharing or trying multiple flavors.",
+      image: "/attached_assets/Steamed Veg MoMO.png", // Using veg momo image as placeholder
+      categoryId: momo.id,
+      isFeatured: true,
+      spiceLevel: "Varies",
+      prepTime: "35 mins"
+    });
+
+    // Sausage & Tofu
+    await this.createMenuItem({
+      name: "Chicken Sausage",
+      price: 400,
+      shortDescription: "Juicy grilled chicken sausages",
+      description: "Premium chicken sausages grilled to juicy perfection, seasoned with herbs and served with a side of tangy dipping sauce.",
+      image: "/attached_assets/Sausage fry.png",
+      categoryId: sausageTofu.id,
+      isFeatured: false,
+      spiceLevel: "Medium",
+      prepTime: "20 mins"
+    });
+
+    await this.createMenuItem({
+      name: "Veg Sausage",
+      price: 400,
+      shortDescription: "Plant-based sausages with a smoky flavor",
+      description: "Delicious vegetarian sausages made from a savory blend of plant proteins and spices, grilled to achieve a satisfying smoky flavor.",
+      image: "/attached_assets/Onion Pakora.png", // Using pakora image as placeholder
+      categoryId: sausageTofu.id,
+      isFeatured: false,
+      spiceLevel: "Mild",
+      prepTime: "20 mins"
+    });
+
+    await this.createMenuItem({
+      name: "Veg Tofu",
+      price: 400,
+      shortDescription: "Soft and protein-rich tofu",
+      description: "Premium tofu prepared with herbs and spices, lightly fried to give it a golden exterior while maintaining its soft interior.",
+      image: "/attached_assets/Paneer Pakora.png", // Using paneer image as placeholder
+      categoryId: sausageTofu.id,
+      isFeatured: false,
+      spiceLevel: "Mild",
+      prepTime: "18 mins"
+    });
+
+    // Fried & Sekuwa Dishes
+    await this.createMenuItem({
+      name: "Chicken Fry",
+      price: 250,
+      shortDescription: "Deep-fried crispy chicken pieces",
+      description: "Tender chicken pieces marinated in Nepali spices and deep-fried until golden and crispy, served with a side of spicy tomato sauce.",
+      image: "/attached_assets/Chicken fry.png",
+      categoryId: friedSekuwa.id,
+      isFeatured: true,
+      spiceLevel: "Medium",
+      prepTime: "25 mins"
+    });
+
+    await this.createMenuItem({
+      name: "Fish Fry",
+      price: 300,
+      shortDescription: "Golden-fried fresh fish",
+      description: "Fresh fish fillets coated in a seasoned batter and deep-fried to achieve a crispy golden exterior while keeping the fish tender and moist inside.",
+      image: "/attached_assets/Fish Fry.png",
+      categoryId: friedSekuwa.id,
+      isFeatured: true,
+      spiceLevel: "Medium",
+      prepTime: "25 mins"
+    });
+
+    await this.createMenuItem({
+      name: "Chicken Sekuwa",
+      price: 350,
+      shortDescription: "Spicy and smoky grilled chicken",
+      description: "Traditional Nepali-style grilled chicken marinated in a blend of spices and herbs, cooked over an open flame for an authentic smoky flavor.",
+      image: "/attached_assets/Chicken fry.png", // Using chicken fry image as placeholder
+      categoryId: friedSekuwa.id,
+      isFeatured: false,
+      spiceLevel: "Hot",
+      prepTime: "30 mins"
+    });
+
+    // Non-Veg Khaja Set
+    await this.createMenuItem({
+      name: "Fish Khaja Set",
+      price: 400,
+      shortDescription: "A traditional platter with fried fish and sides",
+      description: "A complete meal featuring crispy fried fish served with beaten rice, spicy potato, pickles, and seasonal vegetables for a satisfying Nepali experience.",
+      image: "/attached_assets/Fish Fry.png", // Using fish fry image as placeholder
+      categoryId: nonVegKhaja.id,
+      isFeatured: true,
+      spiceLevel: "Medium",
+      prepTime: "30 mins"
+    });
+
+    await this.createMenuItem({
+      name: "Chicken Khaja Set",
+      price: 350,
+      shortDescription: "A full meal set with chicken and Nepali accompaniments",
+      description: "A hearty platter with grilled or fried chicken accompanied by beaten rice, alu tama, pickles, and green vegetables - a true taste of Nepal.",
+      image: "/attached_assets/Chicken fry.png", // Using chicken fry image as placeholder
+      categoryId: nonVegKhaja.id,
+      isFeatured: false,
+      spiceLevel: "Medium",
+      prepTime: "30 mins"
+    });
+
+    await this.createMenuItem({
+      name: "Combo Chicken Khaja Set",
+      price: 550,
+      shortDescription: "A mix of chicken, sausage, and gravy",
+      description: "An elaborate Nepali platter featuring chicken, sausage, and rich gravy, served with beaten rice, achar, and seasonal vegetables.",
+      image: "/attached_assets/Chicken fry.png", // Using chicken fry image as placeholder
+      categoryId: nonVegKhaja.id,
+      isFeatured: true,
+      spiceLevel: "Medium",
+      prepTime: "35 mins"
+    });
+
+    // Veg Khaja Set
+    await this.createMenuItem({
+      name: "Veg Khaja Set",
+      price: 200,
+      shortDescription: "A delicious vegetarian snack platter",
+      description: "A vegetarian delight featuring beaten rice, spicy potato, stir-fried vegetables, pickles, and seasonal greens - perfect for a light meal.",
+      image: "/attached_assets/Veg khana set.png", // Using veg khana image as placeholder
+      categoryId: vegKhaja.id,
+      isFeatured: false,
+      spiceLevel: "Medium",
+      prepTime: "25 mins"
+    });
+
+    await this.createMenuItem({
+      name: "Combo Veg Khaja Set",
+      price: 450,
+      shortDescription: "A combination of veg dishes with paneer",
+      description: "An extensive vegetarian platter with paneer, mixed vegetables, beaten rice, pickles, and local delicacies for a complete Nepali dining experience.",
+      image: "/attached_assets/Veg khana set.png", // Using veg khana image as placeholder
+      categoryId: vegKhaja.id,
+      isFeatured: true,
+      spiceLevel: "Medium",
+      prepTime: "30 mins"
+    });
+
+    // Khana Set
+    await this.createMenuItem({
+      name: "Veg Khana Set",
+      price: 250,
+      shortDescription: "A full Nepali vegetarian meal",
+      description: "The traditional Nepali meal featuring steamed rice, lentil soup (dal), mixed vegetable curry, spinach, pickle, and yogurt.",
+      image: "/attached_assets/Veg khana set.png",
+      categoryId: khanaSet.id,
+      isFeatured: true,
+      spiceLevel: "Medium",
+      prepTime: "25 mins"
+    });
+
+    await this.createMenuItem({
+      name: "Chicken Khana Set",
+      price: 400,
+      shortDescription: "Rice with chicken curry and sides",
+      description: "A hearty meal with steamed rice, chicken curry, lentil soup, seasonal vegetables, pickle, and yogurt - a complete Nepali dining experience.",
+      image: "/attached_assets/Veg khana set.png", // Using veg khana image as placeholder
+      categoryId: khanaSet.id,
+      isFeatured: false,
+      spiceLevel: "Medium",
+      prepTime: "30 mins"
+    });
+
+    await this.createMenuItem({
+      name: "Fish Khana Set",
+      price: 500,
+      shortDescription: "A complete meal with fish and accompaniments",
+      description: "Steamed rice served with freshly prepared fish curry, lentil soup, sautéed vegetables, pickle, and yogurt for a nutritious and flavorful meal.",
+      image: "/attached_assets/Fish Fry.png", // Using fish fry image as placeholder
+      categoryId: khanaSet.id,
+      isFeatured: false,
+      spiceLevel: "Medium",
+      prepTime: "30 mins"
+    });
+
+    await this.createMenuItem({
+      name: "Mutton Khana Set",
+      price: 550,
+      shortDescription: "Hearty meal with tender mutton curry",
+      description: "A premium Nepali thali featuring rice, rich mutton curry slow-cooked with traditional spices, lentil soup, vegetables, and accompaniments.",
+      image: "/attached_assets/Mutton Khana set.png",
+      categoryId: khanaSet.id,
+      isFeatured: true,
+      spiceLevel: "Hot",
+      prepTime: "35 mins"
+    });
+
+    // Fried Rice
+    await this.createMenuItem({
+      name: "Fried Jeera Rice",
+      price: 100,
+      shortDescription: "Aromatic cumin-flavored rice",
+      description: "Basmati rice stir-fried with cumin seeds, giving it a distinctive aroma and flavor, perfect as a side dish or light meal.",
+      image: "/attached_assets/Veg khana set.png", // Using veg khana image as placeholder
+      categoryId: friedRice.id,
+      isFeatured: false,
+      spiceLevel: "Mild",
+      prepTime: "15 mins"
+    });
+
+    await this.createMenuItem({
+      name: "Veg Fried Rice",
+      price: 150,
+      shortDescription: "Fried rice loaded with vegetables",
+      description: "Flavorful rice stir-fried with a colorful medley of fresh vegetables and aromatic spices, a perfect quick meal or side dish.",
+      image: "/attached_assets/Veg khana set.png", // Using veg khana image as placeholder
+      categoryId: friedRice.id,
+      isFeatured: false,
+      spiceLevel: "Mild",
+      prepTime: "18 mins"
+    });
+
+    await this.createMenuItem({
+      name: "Egg Fried Rice",
+      price: 200,
+      shortDescription: "Fried rice mixed with egg",
+      description: "Savory rice stir-fried with scrambled eggs, vegetables, and our special sauce blend for a protein-rich and satisfying dish.",
+      image: "/attached_assets/Veg khana set.png", // Using veg khana image as placeholder
+      categoryId: friedRice.id,
+      isFeatured: true,
+      spiceLevel: "Mild",
+      prepTime: "20 mins"
+    });
+
+    await this.createMenuItem({
+      name: "Chicken Fried Rice",
+      price: 250,
+      shortDescription: "Chicken-infused stir-fried rice",
+      description: "A hearty dish of rice stir-fried with tender chicken pieces, vegetables, and our special blend of seasonings.",
+      image: "/attached_assets/Veg khana set.png", // Using veg khana image as placeholder
+      categoryId: friedRice.id,
+      isFeatured: false,
+      spiceLevel: "Medium",
+      prepTime: "25 mins"
+    });
+
+    await this.createMenuItem({
+      name: "Mixed Fried Rice",
+      price: 250,
+      shortDescription: "Fried rice with eggs and chicken",
+      description: "The ultimate fried rice combining both chicken and eggs with vegetables, creating a complete and flavorful meal in a single dish.",
+      image: "/attached_assets/Veg khana set.png", // Using veg khana image as placeholder
+      categoryId: friedRice.id,
+      isFeatured: true,
+      spiceLevel: "Medium",
+      prepTime: "25 mins"
+    });
+
+    // Salads & Snacks
+    await this.createMenuItem({
+      name: "Masala Papad",
+      price: 50,
+      shortDescription: "Spiced and crunchy papadum",
+      description: "Crispy papadum topped with a tangy mix of finely chopped onions, tomatoes, and spices, a perfect appetizer or accompaniment.",
+      image: "/attached_assets/Onion Pakora.png", // Using pakora image as placeholder
+      categoryId: saladsSnacks.id,
+      isFeatured: false,
+      spiceLevel: "Medium",
+      prepTime: "8 mins"
+    });
+
+    await this.createMenuItem({
+      name: "Green Salad",
+      price: 150,
+      shortDescription: "Fresh and healthy mixed greens",
+      description: "A refreshing mix of seasonal greens, cucumbers, tomatoes, carrots, and onions, lightly dressed with lemon juice and herbs.",
+      image: "/attached_assets/Veg khana set.png", // Using veg khana image as placeholder
+      categoryId: saladsSnacks.id,
+      isFeatured: false,
+      spiceLevel: "None",
+      prepTime: "10 mins"
+    });
+
+    await this.createMenuItem({
+      name: "Fruit Salad",
+      price: 350,
+      shortDescription: "A colorful mix of fresh fruits",
+      description: "A delightful medley of seasonal fruits, freshly cut and served with a honey yogurt dressing or as pure fresh fruit.",
+      image: "/attached_assets/Rice Pudding.png", // Using rice pudding image as placeholder
+      categoryId: saladsSnacks.id,
+      isFeatured: true,
+      spiceLevel: "None",
+      prepTime: "15 mins"
+    });
+
+    // Desserts
+    await this.createMenuItem({
+      name: "Rice Pudding",
+      price: 250,
+      shortDescription: "Creamy and sweet Nepali-style kheer",
+      description: "A rich and creamy traditional dessert made by slowly cooking rice with milk, sugar, and cardamom, garnished with nuts and raisins.",
+      image: "/attached_assets/Rice Pudding.png",
+      categoryId: desserts.id,
+      isFeatured: true,
+      spiceLevel: "None",
+      prepTime: "45 mins"
+    });
+
+    await this.createMenuItem({
+      name: "Ice Cream",
+      price: 80,
+      shortDescription: "Cool and creamy ice cream",
+      description: "Premium ice cream in various flavors, the perfect sweet treat to end your meal on a refreshing note.",
+      image: "/attached_assets/Rice Pudding.png", // Using rice pudding image as placeholder
+      categoryId: desserts.id,
+      isFeatured: false,
+      spiceLevel: "None",
+      prepTime: "2 mins"
+    });
+
+    // Cigarettes
+    await this.createMenuItem({
+      name: "Bijuli",
+      price: 10,
+      shortDescription: "Affordable local cigarette (3 pieces)",
+      description: "A budget-friendly local cigarette option available in a pack of three pieces.",
+      image: "/attached_assets/Black Coffee.png", // Using placeholder image
+      categoryId: cigarettes.id,
+      isFeatured: false,
+      spiceLevel: "None",
+      prepTime: "1 min"
+    });
+
+    await this.createMenuItem({
+      name: "Khukuri",
+      price: 10,
+      shortDescription: "Strong and bold single-stick cigarette",
+      description: "A locally popular single cigarette known for its strong flavor profile.",
+      image: "/attached_assets/Black Coffee.png", // Using placeholder image
+      categoryId: cigarettes.id,
+      isFeatured: false,
+      spiceLevel: "None",
+      prepTime: "1 min"
+    });
+
+    await this.createMenuItem({
+      name: "Sikhar-Ice (Blue)",
+      price: 20,
+      shortDescription: "A menthol-infused smooth cigarette",
+      description: "A premium cigarette with a cooling menthol flavor for a smooth smoking experience.",
+      image: "/attached_assets/Black Coffee.png", // Using placeholder image
+      categoryId: cigarettes.id,
+      isFeatured: false,
+      spiceLevel: "None",
+      prepTime: "1 min"
+    });
+    
+    // Soft Drinks
+    await this.createMenuItem({
+      name: "Coke",
+      price: 60,
+      shortDescription: "Classic carbonated cola for a refreshing fizz",
+      description: "The world-famous cola served ice-cold for that perfect refreshing fizz to complement your meal.",
+      image: "/attached_assets/Black Coffee.png", // Using coffee image as placeholder
+      categoryId: softDrinks.id,
+      isFeatured: false,
+      spiceLevel: "None",
+      prepTime: "1 min"
+    });
+
+    await this.createMenuItem({
+      name: "Fanta",
+      price: 60,
+      shortDescription: "Sweet and citrusy orange-flavored soda",
+      description: "A bubbly orange-flavored soda with a sweet, fruity taste that pairs well with any meal.",
+      image: "/attached_assets/Black Coffee.png", // Using coffee image as placeholder
+      categoryId: softDrinks.id,
+      isFeatured: false,
+      spiceLevel: "None",
+      prepTime: "1 min"
+    });
+
+    await this.createMenuItem({
+      name: "Sprite",
+      price: 60,
+      shortDescription: "Lemon-lime soda with a crisp and tangy taste",
+      description: "A refreshing lemon-lime flavored soda that's crisp, clean, and caffeine-free.",
+      image: "/attached_assets/Black Coffee.png", // Using coffee image as placeholder
+      categoryId: softDrinks.id,
+      isFeatured: false,
+      spiceLevel: "None",
+      prepTime: "1 min"
+    });
+
+    await this.createMenuItem({
+      name: "Mix Fruit Juice",
+      price: 100,
+      shortDescription: "A blend of fresh seasonal fruits for a nutritious drink",
+      description: "A vitamin-packed juice made from a blend of seasonal fruits, freshly squeezed and served chilled.",
+      image: "/attached_assets/Black Coffee.png", // Using coffee image as placeholder
+      categoryId: softDrinks.id,
+      isFeatured: true,
+      spiceLevel: "None",
+      prepTime: "5 mins"
+    });
+
+    await this.createMenuItem({
+      name: "Red Bull",
+      price: 150,
+      shortDescription: "Energy drink to keep you active and refreshed",
+      description: "The world-famous energy drink that gives you wings when you need an extra boost of energy.",
+      image: "/attached_assets/Black Coffee.png", // Using coffee image as placeholder
+      categoryId: softDrinks.id,
+      isFeatured: false,
+      spiceLevel: "None",
+      prepTime: "1 min"
     });
 
     await this.createMenuItem({
