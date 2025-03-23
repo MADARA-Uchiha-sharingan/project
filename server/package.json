@@ -26,5 +26,8 @@
   "devDependencies": {
     "drizzle-kit": "^0.20.14",
     "ts-node": "^10.9.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 } 
