@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: gourmet-delights-api
+    env: node
+    buildCommand: cd server && npm install
+    startCommand: cd server && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: DATABASE_URL
+        fromDatabase:
+          name: gourmet_delights_db
+          property: connectionString
+
+  - type: web
+    name: gourmet-delights-client
+    env: static
+    buildCommand: cd client && npm install && npm run build
+    staticPublishPath: ./client/dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://gourmet-delights-api.onrender.com 
