@@ -10,9 +10,7 @@ services:
       - key: PORT
         value: 3000
       - key: DATABASE_URL
-        fromDatabase:
-          name: gourmet_delights_db
-          property: connectionString
+        value: postgresql://neondb_owner:npg_FbMU0ABlY4tj@ep-cold-snow-a5jnccig-pooler.us-east-2.aws.neon.tech/neondb?sslmode=require
 
   - type: web
     name: gourmet-delights-client
