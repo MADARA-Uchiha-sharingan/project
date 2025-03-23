@@ -9,6 +9,9 @@
     "forceConsistentCasingInFileNames": true,
     "outDir": "../server/dist/shared",
     "rootDir": ".",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "resolveJsonModule": true,
     "composite": true
   },
   "include": ["**/*.ts"],

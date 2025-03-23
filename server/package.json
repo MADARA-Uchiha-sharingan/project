@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "ts-node index.ts",
     "prebuild": "rm -rf dist",
-    "build": "tsc && cp package.json dist/server && cd dist/server && npm install --production",
+    "build": "cd ../shared && tsc && cd ../server && tsc && cp package.json dist/server && cd dist/server && npm install --production",
     "start": "node index.js",
     "clean": "rm -rf dist"
   },
