@@ -43,7 +43,9 @@ export class MemStorage implements IStorage {
     this.menuItemCurrentId = 1;
 
     // Initialize with sample data
-    this.initializeData();
+    this.initializeData().catch(error => {
+      console.error('Failed to initialize data:', error);
+    });
   }
 
   private async initializeData() {
@@ -1158,27 +1160,25 @@ export class MemStorage implements IStorage {
   }
 
   async getMenuItemsByCategory(categoryId: number): Promise<MenuItem[]> {
-    return Array.from(this.menuItems.values()).filter(
-      (item) => item.categoryId === categoryId
-    );
+    return Array.from(this.menuItems.values())
+      .filter(item => item.categoryId === categoryId);
   }
 
   async getFeaturedMenuItems(): Promise<MenuItem[]> {
-    return Array.from(this.menuItems.values()).filter(
-      (item) => item.isFeatured
-    );
+    return Array.from(this.menuItems.values())
+      .filter(item => item.isFeatured);
   }
 
   async createMenuItem(insertMenuItem: InsertMenuItem): Promise<MenuItem> {
-    const id = this.menuItemCurrentId++;
-    const menuItem: MenuItem = { 
-      ...insertMenuItem, 
-      id,
+    const menuItem: MenuItem = {
+      id: this.menuItemCurrentId++,
+      ...insertMenuItem,
+      fallbackIcon: insertMenuItem.fallbackIcon || null,
       isFeatured: insertMenuItem.isFeatured || false,
       spiceLevel: insertMenuItem.spiceLevel || null,
       prepTime: insertMenuItem.prepTime || null
     };
-    this.menuItems.set(id, menuItem);
+    this.menuItems.set(menuItem.id, menuItem);
     return menuItem;
   }
 }
