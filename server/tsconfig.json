@@ -26,6 +26,7 @@
     "../vite.config.ts",
     "../client/**/*",
     "vite.ts",
-    "**/vite*.ts"
+    "**/vite*.ts",
+    "../**/vite*.ts"
   ]
 } 

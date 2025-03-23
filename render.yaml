@@ -12,6 +12,8 @@ services:
         value: 3000
       - key: DATABASE_URL
         value: postgresql://neondb_owner:npg_FbMU0ABlY4tj@ep-cold-snow-a5jnccig-pooler.us-east-2.aws.neon.tech/neondb?sslmode=require
+      - key: NODE_OPTIONS
+        value: --max-old-space-size=2048
 
   - type: web
     name: gourmet-delights-client
