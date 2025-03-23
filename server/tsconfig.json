@@ -7,17 +7,18 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "dist",
-    "rootDir": ".",
-    "baseUrl": ".",
+    "outDir": "./dist",
+    "rootDir": "../",
+    "baseUrl": "../",
     "paths": {
-      "@/*": ["./*"],
-      "@shared/*": ["../shared/*"]
+      "@/*": ["server/*"],
+      "@shared/*": ["shared/*"]
     },
     "moduleResolution": "node",
     "allowJs": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "composite": true
   },
-  "include": ["./**/*.ts", "../shared/**/*.ts"],
-  "exclude": ["node_modules", "dist", "../client/**/*", "../vite.config.ts", "../tailwind.config.ts", "../drizzle.config.ts"]
+  "include": ["**/*.ts", "../shared/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
 } 
