@@ -1,23 +1,23 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "module": "ESNext",
+    "module": "CommonJS",
     "lib": ["ES2020"],
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "outDir": "dist",
-    "rootDir": "../",
-    "baseUrl": "../",
+    "rootDir": ".",
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["server/*"],
-      "@shared/*": ["shared/*"]
+      "@/*": ["./*"],
+      "@shared/*": ["../shared/*"]
     },
     "moduleResolution": "node",
     "allowJs": true,
     "resolveJsonModule": true
   },
-  "include": ["../**/*.ts"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["./**/*.ts", "../shared/**/*.ts"],
+  "exclude": ["node_modules", "dist", "../client/**/*", "../vite.config.ts", "../tailwind.config.ts", "../drizzle.config.ts"]
 } 

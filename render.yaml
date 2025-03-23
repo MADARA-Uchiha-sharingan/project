@@ -3,7 +3,7 @@ services:
     name: gourmet-delights-api
     env: node
     buildCommand: cd server && npm install && npm run build
-    startCommand: cd server/dist/server && npm start
+    startCommand: cd server/dist && npm start
     envVars:
       - key: NODE_ENV
         value: production
