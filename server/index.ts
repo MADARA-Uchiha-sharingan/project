@@ -5,7 +5,7 @@ import cors from 'cors';
 import { drizzle } from 'drizzle-orm/node-postgres';
 import { Pool } from 'pg';
 import { menuItems } from '@shared/schema';
-import { Storage } from './storage';
+import { storage } from './storage';
 import dotenv from 'dotenv';
 
 dotenv.config();

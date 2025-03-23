@@ -2,10 +2,11 @@
   "name": "rest-express",
   "version": "1.0.0",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "dev": "ts-node index.ts",
     "prebuild": "rm -rf dist",
-    "build": "cd ../shared && npm install && tsc && cd ../server && tsc --project tsconfig.json && cp package.json dist/server && cd dist/server && npm install --production",
+    "build": "cd ../shared && npm install && tsc && cd ../server && tsc --project tsconfig.json && cp package.json dist/server && cd dist/server && npm install --omit=dev",
     "start": "node index.js",
     "clean": "rm -rf dist"
   },
